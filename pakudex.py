@@ -35,7 +35,7 @@ class Pakudex:
 
     def evolve_species(self, species: Pakuri) -> bool:
         if species in self.pakuri_list:
-            species.evolve()
+            self.pakuri_list[self.pakuri_list.index(species)].evolve()
             return True
         else:
             return False
