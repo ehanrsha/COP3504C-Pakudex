@@ -41,11 +41,6 @@ class Pakudex:
             return False
 
 
-# def evolve_species(self, species)
-# Attempts to evolve species within the pakudex; if successful, return True, and False
-# otherwise
-
-
 def main():
     pass
 

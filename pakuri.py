@@ -1,4 +1,4 @@
-class pakuri:
+class Pakuri:
 
     def __init__(self, species):
         self.attack = (len(species) * 7) + 9
@@ -25,6 +25,3 @@ class pakuri:
         self.attack *= 2
         self.defense *= 4
         self.speed *= 3
-
-
-
