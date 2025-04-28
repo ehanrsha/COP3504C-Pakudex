@@ -82,7 +82,7 @@ Pakudex Main Menu
                     print("Error: No such Pakuri!")
 
             case 5:
-                userInput = input("Enter the name of the species to display: ")
+                pakudex.sort_pakuri()
                 print("Pakuri have been sorted!")
 
             case 6:
