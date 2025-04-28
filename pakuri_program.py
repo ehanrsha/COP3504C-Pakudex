@@ -13,11 +13,10 @@ def main():
                 )
             )
             print(f"The Pakudex can hold {capacity} species of Pakuri.")
+            validCapacity = False
         except Exception:
             print("Please enter a valid size.")
             pass
-
-        validCapacity = False
 
     pakudex = Pakudex(capacity)
     running = True
