@@ -3,16 +3,24 @@ from pakudex import Pakudex
 
 
 def main():
-    capacity: int = int(
-        input(
-            "Welcome to Pakudex: Tracker Extraordinaire!\nEnter max capacity of the Pakudex: "
-        )
-    )
-    print(f"The Pakudex can hold {capacity} species of Pakuri.")
+    validCapacity: bool = True
+    capacity: int = 20
+    while validCapacity:
+        try:
+            capacity = int(
+                input(
+                    "Welcome to Pakudex: Tracker Extraordinaire!\nEnter max capacity of the Pakudex: "
+                )
+            )
+            print(f"The Pakudex can hold {capacity} species of Pakuri.")
+        except Exception:
+            print("Try again")
+            pass
+
+        pakudex = Pakudex(capacity)
+        validCapacity = False
 
     running = True
-    pakudex = Pakudex(capacity)
-
     while running:
         print(
             """
@@ -38,6 +46,7 @@ Pakudex Main Menu
                 if not pakudex.pakuri_list:
                     print("No Pakuri in Pakudex yet!")
                 else:
+                    print("Pakuri In Pakudex:")
                     for index, pakuri in enumerate(pakudex.pakuri_list):
                         print(f"{index+1}. {pakuri.species}")
 
