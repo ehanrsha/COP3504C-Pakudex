@@ -38,9 +38,12 @@ class Pakudex:
             self.pakuri_list += [species]
             return True
 
-    def evolve_species(self, species: Pakuri) -> bool:
-        if species in self.pakuri_list:
-            species.evolve()
+    def evolve_species(self, input: str) -> bool:
+        x: Pakuri | None = next(
+            (x for x in self.pakuri_list if x.species == input), None
+        )
+        if isinstance(x, Pakuri):
+            x.evolve()
             return True
         else:
             return False
