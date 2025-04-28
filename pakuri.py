@@ -1,10 +1,10 @@
 class Pakuri:
 
-    def __init__(self, species):
-        self.attack = (len(species) * 7) + 9
-        self.defense = (len(species) * 5) + 17
-        self.speed = (len(species) * 6) + 13
-        self.species = species
+    def __init__(self, species: str):
+        self.attack: int = (len(species) * 7) + 9
+        self.defense: int = (len(species) * 5) + 17
+        self.speed: int = (len(species) * 6) + 13
+        self.species: str = species
 
     def get_attack(self):
         return self.attack
@@ -18,7 +18,7 @@ class Pakuri:
     def get_speed(self):
         return self.speed
 
-    def set_attack(self, new_attack):
+    def set_attack(self, new_attack: int):
         self.attack = new_attack
 
     def evolve(self):
