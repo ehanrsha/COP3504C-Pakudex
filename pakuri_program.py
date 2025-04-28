@@ -39,7 +39,7 @@ Pakudex Main Menu
                     print("No Pakuri in Pakudex yet!")
                 else:
                     for index, pakuri in enumerate(pakudex.pakuri_list):
-                        print(f"{index}. {pakuri}")
+                        print(f"{index+1}. {pakuri.species}")
 
             case 2:
                 userInput = input("Enter the name of the species to display: ")
@@ -55,13 +55,14 @@ Pakudex Main Menu
                     print(f"Speed: {dataList[2]}")
 
             case 3:
+                if len(pakudex.pakuri_list) == pakudex.capacity:
+                    print("Error: Pakudex is full!")
+
                 userInput = input("Enter the name of the species to add: ")
                 newPakuri = Pakuri(userInput)
                 if newPakuri in pakudex.pakuri_list:
                     print("Error: Pakudex already contains this species!")
-                elif len(pakudex.pakuri_list) == pakudex.capacity:
-                    print("Error: Pakudex is full!")
-                else:
+                elif pakudex.add_pakuri(newPakuri):
                     print(
                         f"Pakuri species {newPakuri.get_species()} successfully added!"
                     )
