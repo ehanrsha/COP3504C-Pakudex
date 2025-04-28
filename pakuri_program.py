@@ -5,7 +5,7 @@ from pakudex import Pakudex
 def main():
     capacity: int = int(
         input(
-            " Welcome to Pakudex: Tracker Extraordinaire! Enter max capacity of the Pakudex: "
+            "Welcome to Pakudex: Tracker Extraordinaire!\nEnter max capacity of the Pakudex: "
         )
     )
     print(f"The Pakudex can hold {capacity} species of Pakuri.")
@@ -31,7 +31,6 @@ Pakudex Main Menu
             userInput = int(userInput)
 
         except Exception:
-            print("Unrecogniezd menu selection!\n")
             pass
 
         match userInput:
@@ -83,7 +82,7 @@ Pakudex Main Menu
                 running = False
 
             case _:
-                print("What would you like to do? Unrecognized menu selection!\n")
+                print("Unrecognized menu selection!\n")
 
 
 if __name__ == "__main__":
