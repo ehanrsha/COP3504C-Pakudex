@@ -17,17 +17,20 @@ class Pakudex:
             return None
         return [i.get_species() for i in self.pakuri_list]
 
-    def get_stats(self, species: Pakuri) -> list[int] | None:
-        if species in self.pakuri_list:
-            return [species.attack, species.defense, species.speed]
+    def get_stats(self, input: str) -> list[int] | None:
+        x: Pakuri = Pakuri(input)
+        if x in self.pakuri_list:
+            return [x.attack, x.defense, x.speed]
         else:
             return None
 
     def sort_pakuri(self) -> None:
-        self.pakuri_list.sort(key=lambda i: i.species)
+        self.pakuri_list = sorted(self.pakuri_list, key=lambda pakuri: pakuri.species)
 
     def add_pakuri(self, species: Pakuri) -> bool:
         if len(self.pakuri_list) == self.capacity:
+            return False
+        elif species in self.pakuri_list:
             return False
         else:
             self.pakuri_list += [species]

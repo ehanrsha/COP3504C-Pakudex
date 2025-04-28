@@ -46,9 +46,8 @@ Pakudex Main Menu
 
         case 2:
             userInput = input("Enter the name of the species to display: ")
-            newPakuri = Pakuri(userInput)
 
-            dataList: list[int] | None = pakudex.get_stats(newPakuri)
+            dataList: list[int] | None = pakudex.get_stats(userInput)
             if dataList is None:
                 print("Error: No such Pakuri!")
             else:
