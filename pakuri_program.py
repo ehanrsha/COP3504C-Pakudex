@@ -9,7 +9,7 @@ def main():
     while validCapacity:
         try:
             capacity = int(input("Enter max capacity of the Pakudex: "))
-            if capacity <= 1:
+            if capacity <= 0:
                 raise Exception
             print(f"The Pakudex can hold {capacity} species of Pakuri.")
             validCapacity = False

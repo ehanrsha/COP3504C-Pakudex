@@ -18,8 +18,10 @@ class Pakudex:
         return [i.get_species() for i in self.pakuri_list]
 
     def get_stats(self, input: str) -> list[int] | None:
-        x: Pakuri = Pakuri(input)
-        if x in self.pakuri_list:
+        x: Pakuri | None = next(
+            (x for x in self.pakuri_list if x.species == input), None
+        )
+        if isinstance(x, Pakuri):
             return [x.attack, x.defense, x.speed]
         else:
             return None
