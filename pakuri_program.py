@@ -3,15 +3,14 @@ from pakudex import Pakudex
 
 
 def main():
+    print("Welcome to Pakudex: Tracker Extraordinaire!")
     validCapacity: bool = True
     capacity: int = 20
     while validCapacity:
         try:
-            capacity = int(
-                input(
-                    "Welcome to Pakudex: Tracker Extraordinaire!\nEnter max capacity of the Pakudex: "
-                )
-            )
+            capacity = int(input("Enter max capacity of the Pakudex: "))
+            if capacity <= 1:
+                raise Exception
             print(f"The Pakudex can hold {capacity} species of Pakuri.")
             validCapacity = False
         except Exception:
