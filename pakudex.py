@@ -3,7 +3,7 @@ from pakuri import Pakuri
 
 class Pakudex:
     def __init__(self, capacity: int = 20):
-        self.capacity: int = 20
+        self.capacity: int = capacity
         self.pakuri_list: list[Pakuri] = []
 
     def get_size(self) -> int:

@@ -14,12 +14,12 @@ def main():
             )
             print(f"The Pakudex can hold {capacity} species of Pakuri.")
         except Exception:
-            print("Try again")
+            print("Please enter a valid size.")
             pass
 
-        pakudex = Pakudex(capacity)
         validCapacity = False
 
+    pakudex = Pakudex(capacity)
     running = True
     while running:
         print(
@@ -66,6 +66,7 @@ Pakudex Main Menu
             case 3:
                 if len(pakudex.pakuri_list) == pakudex.capacity:
                     print("Error: Pakudex is full!")
+                    pass
 
                 userInput = input("Enter the name of the species to add: ")
                 newPakuri = Pakuri(userInput)
