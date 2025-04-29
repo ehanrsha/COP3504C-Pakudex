@@ -66,13 +66,10 @@ Pakudex Main Menu
                     print("Error: Pakudex is full!")
                 else:
                     userInput = input("Enter the name of the species to add: ")
-                    newPakuri = Pakuri(userInput)
-                    if newPakuri in pakudex.pakuri_list:
+                    if pakudex.add_pakuri(userInput) == False:
                         print("Error: Pakudex already contains this species!")
-                    elif pakudex.add_pakuri(newPakuri):
-                        print(
-                            f"Pakuri species {newPakuri.get_species()} successfully added!"
-                        )
+                    else:
+                        print(f"Pakuri species {userInput} successfully added!")
 
             case 4:
                 userInput = input("Enter the name of the species to evolve: ")

@@ -29,21 +29,22 @@ class Pakudex:
     def sort_pakuri(self) -> None:
         self.pakuri_list = sorted(self.pakuri_list, key=lambda pakuri: pakuri.species)
 
-    def add_pakuri(self, species: Pakuri) -> bool:
-        if len(self.pakuri_list) == self.capacity:
-            return False
-        elif species in self.pakuri_list:
+    def add_pakuri(self, input: str) -> bool:
+        to_add: Pakuri | None = next(
+            (x for x in self.pakuri_list if x.species == input), None
+        )
+        if to_add is not None:
             return False
         else:
-            self.pakuri_list += [species]
+            self.pakuri_list += [Pakuri(input)]
             return True
 
     def evolve_species(self, input: str) -> bool:
-        x: Pakuri | None = next(
+        to_evolve: Pakuri | None = next(
             (x for x in self.pakuri_list if x.species == input), None
         )
-        if isinstance(x, Pakuri):
-            x.evolve()
+        if isinstance(to_evolve, Pakuri):
+            to_evolve.evolve()
             return True
         else:
             return False
